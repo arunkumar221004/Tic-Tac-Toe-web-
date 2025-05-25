@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6e7dff, #a1c4fd); /* Soft Blue Gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#reset {
+  background-color: #ff6f61; /* Reset button color */
+  color: white;
+}
+
+#reset:hover {
+  background-color: #ff4b3a; /* Reset button hover color */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+#new-game {
+  background-color: #007bff; /* New Game button color */
+  color: white;
+}
+
+#new-game:hover {
+  background-color: #0056b3; /* New Game button hover color */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cell {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+.result-screen {
+  display: none;
+  position: fixed;  /* Fixed positioning for overlay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensure it's in front */
+}
+
+#new-game {
+  background-color: #007bff;
+}
+
+#new-game:hover {
+  background-color: #0056b3;
+}
